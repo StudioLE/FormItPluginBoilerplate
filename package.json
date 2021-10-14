@@ -1,21 +1,21 @@
 {
-  "name": "formit-plugin",
+  "name": "formit-plugin-boilerplate",
   "version": "1.0.0",
-  "description": "A FormIt Plugin",
+  "description": "Boilerplate code for a FormIt Plugin",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/StudioLE/FormitPlugin.git"
+    "url": "git+https://github.com/StudioLE/FormitPluginBoilerplate.git"
   },
   "author": "",
   "license": "",
   "bugs": {
-    "url": "https://github.com/StudioLE/FormitPlugin/issues"
+    "url": "https://github.com/StudioLE/FormitPluginBoilerplate/issues"
   },
-  "homepage": "https://github.com/StudioLE/FormitPlugin#readme",
+  "homepage": "https://github.com/StudioLE/FormitPluginBoilerplate#readme",
   "devDependencies": {
     "eslint": "^8.0.1"
   },
