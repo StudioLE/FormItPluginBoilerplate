@@ -6,21 +6,27 @@
 </head>
 <body>
     <div class="pluginContainer">
-        <h1>Hello World</h1>
-        <p>Create a cuboid of the specified size at the origin.</p>
+
+        <h1>Hyperbolic Paraboloid Creator</h1>
+
+        <p>A hyperbolic paraboloid is a doubly ruled surface; that means that through every point there are two distinct lines that can lie on the surface.</p>
+
+        <p>Through computational design it's easy to draw but by traditional means it would take a while, hence making it an ideal candidate to illustrate the power of Dynamo, visual programming, and computational design.</p>
+
         <div>
-            <input id="Width" type=number value =12 />
-            <label>Width</label>
+            <input id="Count" type="number" value="8" />
+            <label>Count</label>
         </div>
+
         <div>
-            <input id="Length" type=number value =12 />
-            <label>Length</label>
-        </div>
-        <div>
-            <input id="Height" type=number value =12 />
+            <input id="Height" type="number" value="0.7" />
             <label>Height</label>
         </div>
-        <input id="CreateBlockBtn" type=button value="Create Cuboid" />
+
+        <input id="Create" type=button value="Create" />
+
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js" integrity="sha256-qXBd/EfAdjOA2FGrGAG+b3YBn2tn5A6bhz+LSgYD96k=" crossorigin="anonymous"></script>
+
         <!--Do not remove below scripts unless you know what you're doing-->
         <script type="text/javascript" src="https://formit3d.github.io/SharedPluginUtilities/FormIt.js"></script>
         <script type="text/javascript" src="https://formit3d.github.io/SharedPluginUtilities/FormItInterface.js"></script>
