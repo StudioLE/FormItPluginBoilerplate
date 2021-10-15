@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hello World</title>
+    <title>Hyperbolic Paraboloid Creator</title>
     <link href="plugin.css" rel="stylesheet">
 </head>
 <body>
@@ -11,20 +11,26 @@
 
         <p>A hyperbolic paraboloid is a doubly ruled surface; that means that through every point there are two distinct lines that can lie on the surface.</p>
 
-        <p>Through computational design it's easy to draw but by traditional means it would take a while, hence making it an ideal candidate to illustrate the power of computational design.</p>
-
         <form>
             <label>Width</label>
-            <input id="Width" type="range" min="0" max="100" step="1" />
+            <div class="range" style="--min:0; --max:10;--step:1;">
+                <input id="Width" type="range" min="0" max="10" step="1" />
+            </div>
 
             <label>Length</label>
-            <input id="Length" type="range" min="0" max="100" step="1"/>
+            <div class="range" style="--min:0; --max:10;--step:1;">
+                <input id="Length" type="range" min="0" max="10" step="1" />
+            </div>
 
             <label>Height</label>
-            <input id="Height" type="range" min="0" max="100" step="1" />
+            <div class="range" style="--min:0; --max:10;--step:1;">
+                <input id="Height" type="range" min="0" max="10" step="1" />
+            </div>
 
             <label>Divisions</label>
-            <input id="Divisions" type="range" min="0" max="100" step="1" />
+            <div class="range" style="--min:0; --max:10;--step:1;">
+                <input id="Divisions" type="range" min="0" max="10" step="1" />
+            </div>
 
             <label style="visibility: hidden;">Buttons</label>
             <input id="CreateButton" type="button" value="Create" />
