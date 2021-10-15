@@ -39,8 +39,8 @@ const createHyperbolicParaboloid = async () => {
     for(const x of xCoordinates) {
         for(const y of yCoordinates) {
             // Determine the x, y, and z values
-            const pointX = x * inputs.width;
-            const pointY = y * inputs.length;
+            const pointX = x * inputs.width
+            const pointY = y * inputs.length
             const pointZ = (Math.pow(x, 2) - Math.pow(y, 2)) * inputs.height
 
             // Create a 3D point with theose values
