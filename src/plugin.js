@@ -6,9 +6,9 @@ const state = {
 }
 
 /**
- *  Create button click event handler
+ *  Create a hyperbolic paraboloid
  */
-const onCreateButtonClick = async () => {
+const createHyperbolicParaboloid = async () => {
 
     // Create an object of all the HTML <input> values
     const inputs = {
@@ -54,22 +54,31 @@ const onCreateButtonClick = async () => {
     }
 }
 
+const autoRunCreateHyperbolicParaboloid = async () => {
+    if(state.history.length > 0)
+        undoLastHistory()
+    createHyperbolicParaboloid()
+}
+
 /**
- *  Undo button click event handler
+ *  Undo the last history item
  */
-const onUndoButtonClick = async () => {
-    // Get the latest history ID from the plugin state object
-    const latestHistoryID = _.last(state.history)
+const undoLastHistory = async () => {
+    // Get the last history ID from the plugin state object
+    const lastHistoryID = _.last(state.history)
 
     // Delete all the geometry created in the last history operation
-    WSM.APIDeleteHistory(latestHistoryID)
+    WSM.APIDeleteHistory(lastHistoryID)
 
     // Remove the latest history ID from the plugin state object
     state.history.pop()
 }
 
-// Set the create button click event listener
-document.getElementById("CreateButton").addEventListener("click", onCreateButtonClick)
+// Trigger createHyperbolicParaboloid when the create button is clicked
+document.getElementById("CreateButton").addEventListener("click", createHyperbolicParaboloid)
 
-// Set the undo button click event listener
-document.getElementById("UndoButton").addEventListener("click", onUndoButtonClick)
+// Trigger undoLastHistory when the undo button is clicked
+document.getElementById("UndoButton").addEventListener("click", undoLastHistory)
+
+// Trigger autoRunCreateHyperbolicParaboloid when a range slider is changed
+document.querySelectorAll("input[type='range']").forEach((x) => x.addEventListener("change", autoRunCreateHyperbolicParaboloid))
