@@ -13,30 +13,23 @@
 
         <p>Through computational design it's easy to draw but by traditional means it would take a while, hence making it an ideal candidate to illustrate the power of computational design.</p>
 
-        <div>
-            <input id="Width" type="number" value="12" />
+        <form>
             <label>Width</label>
-        </div>
+            <input id="Width" type="number" value="12" />
 
-        <div>
-            <input id="Length" type="number" value="12" />
             <label>Length</label>
-        </div>
+            <input id="Length" type="number" value="12" />
 
-        <div>
-            <input id="Height" type="number" value="12" />
             <label>Height</label>
-        </div>
+            <input id="Height" type="number" value="12" />
 
-        <div>
-            <input id="Divisions" type="number" value="5" />
             <label>Divisions</label>
-        </div>
+            <input id="Divisions" type="number" value="5" />
 
-        <input id="CreateButton" type="button" value="Create" />
-
-
-        <input id="UndoButton" type="button" value="Undo" />
+            <label style="visibility: hidden;">Buttons</label>
+            <input id="CreateButton" type="button" value="Create" />
+            <input id="UndoButton" type="button" value="Undo" />
+        </form>
 
         <!-- Load Lodash utilities https://lodash.com/ -->
         <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js" integrity="sha256-qXBd/EfAdjOA2FGrGAG+b3YBn2tn5A6bhz+LSgYD96k=" crossorigin="anonymous"></script>

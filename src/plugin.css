@@ -1,4 +1,4 @@
-.pluginContainer {
+    .pluginContainer {
         font-family: Arial;
         padding: 10px;
     }
@@ -14,16 +14,26 @@
         padding-top: 5px;
         padding-bottom: 5px;
     }
+
+    form {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    label {
+        align-self: center;
+        grid-column: 1 / span 4;
+        justify-self: end;
+    }
     
     input {
         border: 1px solid #4676a9;
+        grid-column: 5 / span 8;
         padding-left: 1px;
         padding-right: 1px;
         padding-top: 4px;
         padding-bottom: 4px;
-        margin-top: 7px;
-        margin-bottom: 7px;
-        width: 75px;
     }
     
     input:hover {
@@ -32,8 +42,6 @@
         padding-right: 0px;
         padding-top: 3px;
         padding-bottom: 3px;
-        margin-top: 7px;
-        margin-bottom: 7px;
         outline: none;
     }
     
@@ -41,7 +49,7 @@
         color: white;
         background-color: #4676a9;
         border: 1px solid #4676a9;
-        margin-top: 20px;
+        grid-column: auto / span 4;
         padding: 7px;
         outline: none;
         width: auto;
@@ -51,7 +59,6 @@
         color: white;
         background-color: #4676a9;
         border: 2px solid #c3e8f4;
-        margin-top: 20px;
         padding: 6px;
     }
     
@@ -59,7 +66,6 @@
         color: white;
         background-color: #4676a9;
         border: 2px solid #c3e8f4;
-        margin-top: 20px;
         padding: 6px;
         outline: none;
     }
