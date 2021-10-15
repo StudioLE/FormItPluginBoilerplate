@@ -30,7 +30,7 @@ document
                 const z = (a * Math.pow(x, 2)) + (b * Math.pow(y, 2))
 
                 let point = await WSM.Geom.Point3d(x * inputs.width, y * inputs.length, z * inputs.height)
-                await WSM.APICreateHemisphere(historyID, constants.radius, point, constants.accuracy)
+                WSM.APICreateHemisphere(historyID, constants.radius, point, constants.accuracy)
             }
         }
     })
