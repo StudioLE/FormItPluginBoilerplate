@@ -2,7 +2,8 @@
  * The current plugin state
  */
 const state = {
-    history: []
+    history: [],
+    autoRunEnabled: true
 }
 
 /**
@@ -54,24 +55,42 @@ const createHyperbolicParaboloid = async () => {
     }
 }
 
-const autoRunCreateHyperbolicParaboloid = async () => {
-    if(state.history.length > 0)
-        undoLastHistory()
-    createHyperbolicParaboloid()
-}
-
 /**
  *  Undo the last history item
  */
 const undoLastHistory = async () => {
-    // Get the last history ID from the plugin state object
-    const lastHistoryID = _.last(state.history)
+    // If there is history
+    if(state.history.length > 0) {
+        // Get the last history ID from the plugin state object
+        const lastHistoryID = _.last(state.history)
+    
+        // Delete all the geometry created in the last history operation
+        WSM.APIDeleteHistory(lastHistoryID)
+    
+        // Remove the latest history ID from the plugin state object
+        state.history.pop()
+    }
+}
 
-    // Delete all the geometry created in the last history operation
-    WSM.APIDeleteHistory(lastHistoryID)
+/**
+ *  Update the auto run state
+ */
+const setAutoRun = async (event) => {
+    state.autoRunEnabled = event.target.checked
+}
 
-    // Remove the latest history ID from the plugin state object
-    state.history.pop()
+/**
+ *  Auto run createHyperbolicParaboloid if auto run is enabled
+ */
+const autoRunCreateHyperbolicParaboloid = async () => {
+    // If auto run is enabled
+    if(state.autoRunEnabled) {
+        // Undo the last history item
+        undoLastHistory()
+
+        // Create a hyperbolic paraboloid
+        createHyperbolicParaboloid()
+    }
 }
 
 // Trigger createHyperbolicParaboloid when the create button is clicked
@@ -79,6 +98,9 @@ document.getElementById("CreateButton").addEventListener("click", createHyperbol
 
 // Trigger undoLastHistory when the undo button is clicked
 document.getElementById("UndoButton").addEventListener("click", undoLastHistory)
+
+// Trigger undoLastHistory when the undo button is clicked
+document.getElementById("AutoRun").addEventListener("change", setAutoRun)
 
 // Trigger autoRunCreateHyperbolicParaboloid when a range slider is changed
 document.querySelectorAll("input[type='range']").forEach((x) => x.addEventListener("change", autoRunCreateHyperbolicParaboloid))
