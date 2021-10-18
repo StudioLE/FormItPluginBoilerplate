@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hyperbolic Paraboloid Creator</title>
+    <link href="plugin.css" rel="stylesheet">
+</head>
+<body>
+    <div class="pluginContainer">
+
+        <h1>Hyperbolic Paraboloid Creator</h1>
+
+        <p>A hyperbolic paraboloid is a doubly ruled surface; that means that through every point there are two distinct lines that can lie on the surface.</p>
+
+        <form>
+            <label>Width</label>
+            <div class="range" style="--min:1; --max:10;--step:1;">
+                <input id="Width" type="range" min="1" max="10" step="1" />
+            </div>
+
+            <label>Length</label>
+            <div class="range" style="--min:1; --max:10;--step:1;">
+                <input id="Length" type="range" min="1" max="10" step="1" />
+            </div>
+
+            <label>Height</label>
+            <div class="range" style="--min:1; --max:10;--step:1;">
+                <input id="Height" type="range" min="1" max="10" step="1" />
+            </div>
+
+            <label>Divisions</label>
+            <div class="range" style="--min:1; --max:10;--step:1;">
+                <input id="Divisions" type="range" min="1" max="10" step="1" />
+            </div>
+
+            <label>Auto Run</label>
+            <input id="AutoRun" type="checkbox" checked />
+
+            <label style="visibility: hidden;">Buttons</label>
+            <input id="CreateButton" type="button" value="Create" />
+            <input id="UndoButton" type="button" value="Undo" />
+        </form>
+
+        <!-- Load Lodash utilities https://lodash.com/ -->
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js" integrity="sha256-qXBd/EfAdjOA2FGrGAG+b3YBn2tn5A6bhz+LSgYD96k=" crossorigin="anonymous"></script>
+
+        <!--Do not remove below scripts unless you know what you're doing-->
+        <script type="text/javascript" src="https://formit3d.github.io/SharedPluginUtilities/FormIt.js"></script>
+        <script type="text/javascript" src="https://formit3d.github.io/SharedPluginUtilities/FormItInterface.js"></script>
+        <script type="text/javascript" src="https://formit3d.github.io/SharedPluginUtilities/PluginUtils.js"></script>
+        <script type="text/javascript" src="plugin.js"></script>
+        <script type="text/javascript">
+            FormItInterface.Initialize();
+        </script>
+
+    </div>
+</body>
+</html>

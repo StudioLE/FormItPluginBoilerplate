@@ -1,0 +1,107 @@
+    .pluginContainer {
+        font-family: Arial;
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 20px;
+        font-weight: bold;
+        color: grey;
+        padding-bottom: 5px;
+    }
+
+    p {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    form {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 10px;
+        row-gap: 15px;
+    }
+
+    label {
+        align-self: center;
+        grid-column: 1 / span 4;
+        justify-self: end;
+        min-height: 30px;
+    }
+    
+    input:not(input[range]) {
+        border: 1px solid #4676a9;
+        padding-left: 1px;
+        padding-right: 1px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+    
+    input:not(input[range]):hover {
+        border: 2px solid #c3e8f4;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        outline: none;
+    }
+
+    .range {
+        --ticksThickness: 1px;
+        --ticksHeight: 30%;
+        --ticksColor: silver;
+
+        /* padding: 6px; */
+        margin: 0 6px 12px  6px;
+        grid-column: 5 / span 8;
+
+        /* display: inline-block; */
+        background: silver;
+        background: linear-gradient(to right, var(--ticksColor) var(--ticksThickness), transparent 1px) repeat-x;
+        background-size: calc(100%/((var(--max) - var(--min)) / var(--step)) - .1%) var(--ticksHeight);
+        background-position: 0 bottom;
+        position: relative;
+    }
+
+    /* min / max labels at the edges */
+    .range::before, .range::after {
+        font: 12px monospace;
+        content: counter(x);
+        position: absolute;
+        bottom: -2ch;
+    }
+
+    .range::before {
+        counter-reset: x var(--min);
+        transform: translateX(-50%);
+    }
+
+    .range::after {
+        counter-reset: x var(--max);
+        right: 0;
+        transform: translateX(50%);
+    }
+
+    .range > input {
+        margin: 0 -6px;
+        width: calc(100% + 12px);
+    }
+    
+    input[type=button], input[type=submit] {
+        color: white;
+        background-color: #4676a9;
+        border: 1px solid #4676a9;
+        grid-column: auto / span 4;
+        padding: 7px;
+        outline: none;
+        width: auto;
+    }
+    
+    input[type=button]:hover, input[type=submit]:hover, 
+    input[type=button]:focus, input[type=submit]:focus {
+        color: white;
+        background-color: #4676a9;
+        border: 2px solid #c3e8f4;
+        padding: 6px;
+        outline: none;
+    }
